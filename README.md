@@ -24,7 +24,7 @@ Arbetsfilerna ligger i en mapp som heter "src". När man kör nedan angivna task
 
 För att kunna köra min kod så behöver man köra följande: **git clone https://github.com/cssgeek82/gulpone.git**
 Sedan behöver man köra: **npm install**. Detta för att npm-paketen ska installeras. Dessa ligger inte på denna git men information om vilka som ska installeras finns i package.json-filen. Så genom att köra npm install så kommer dessa att installeras. 
-För att köra igång Gulp och få nedanstående tasks att fungera behöver man köra **gulp**. 
+För att köra igång Gulp och få nedanstående tasks att fungera behöver man köra **gulp** i terminalen. 
 
 * **htmlTask**  
 Denna task används för att kopiera HTML-filer från src-mappen (arbetsmappen) till pub-mappen (publiceringsmappen). 
