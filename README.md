@@ -20,8 +20,9 @@ Denna används för att göra bildfiler i formaten png, jpeg, gif och svg mindre
 Denna används för att ladda om webbsidor i webbläsare utan att behöva trycka på "uppdatera"-knappen. Det sker istället automatiskt. 
 
 ## Mitt system och tasks
-pub
-src
+Arbetsfilerna ligger i en mapp som heter "src". När man kör nedan angivna tasks så läggs filer även in i en mapp som heter "pub". Dessa är de filer som ska publiceras på ett eventuellt webbhotell. 
+
+För att kunna köra så behöver köra följande: 
 
 * **htmlTask**  
 Denna task används för att kopiera HTML-filer från src-mappen (arbetsmappen) till pub-mappen (publiceringsmappen). 
