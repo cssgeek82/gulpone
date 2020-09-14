@@ -2,13 +2,15 @@
 
 ## Automatiseringsprocessens syfte:
 
-## Gulp-concat
+
+## Paket och verktyg
+* Gulp-concat
 Denna slår samman filer till en enda fil. Används både till CSS och till JS. 
 
-## Gulp-uglify-es
+* **Gulp-uglify-es**
 
-## Gulp-uglifycss
+* Gulp-uglifycss
 
-## Gulp-imagemin
+* Gulp-imagemin
 
-## Browser-sync
+* Browser-sync
