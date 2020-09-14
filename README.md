@@ -4,13 +4,17 @@
 
 
 ## Paket och verktyg
-* Gulp-concat
+* **Gulp-concat**
 Denna slår samman filer till en enda fil. Används både till CSS och till JS. 
 
 * **Gulp-uglify-es**
+Denna
 
-* Gulp-uglifycss
+* **Gulp-uglifycss**
+Denna
 
-* Gulp-imagemin
+* **Gulp-imagemin**
+Denna
 
-* Browser-sync
+* **Browser-sync**
+Denna
