@@ -22,7 +22,9 @@ Denna används för att ladda om webbsidor i webbläsare utan att behöva trycka
 ## Mitt system och tasks
 Arbetsfilerna ligger i en mapp som heter "src". När man kör nedan angivna tasks så läggs filer även in i en mapp som heter "pub". Dessa är de filer som ska publiceras på ett eventuellt webbhotell. 
 
-För att kunna köra så behöver köra följande: 
+För att kunna köra min kod så behöver man köra följande: **git clone https://github.com/cssgeek82/gulpone.git**
+Sedan behöver man köra: **npm install**. Detta för att npm-paketen ska installeras. Dessa ligger inte på denna git men information om vilka som ska installeras finns i package.json-filen. Så genom att köra npm install så kommer dessa att installeras. 
+För att köra igång Gulp och få nedanstående tasks att fungera behöver man köra **gulp**. 
 
 * **htmlTask**  
 Denna task används för att kopiera HTML-filer från src-mappen (arbetsmappen) till pub-mappen (publiceringsmappen). 
@@ -41,4 +43,7 @@ Denna task används för att känna av ändringar i de fyra ovanstående "tasks"
 
 * **syncTask**  
 Denna används för att använda "browser-sync" för att automatiskt ladda om webbläsarfönstret. 
+
+* **Exportering**  
+Jag exporterar ovanstående tasks så att de kan användas utifrån. Jag kör htmlTask, jsTask, cssTask och imageTask parallelt. Dessa kör jag i serie med watchTask och syncTask som dock körs parellelt med varandra. WatchTask och syncTask kommer hela tiden ligga och vänta på ändringar tills jag avslutar Gulp. 
 
