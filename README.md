@@ -17,4 +17,27 @@ Detta paket används till att minifiera CSS-filer.
 Denna används för att göra bildfiler i formaten png, jpeg, gif och svg mindre. 
 
 * **Browser-sync**  
-Denna
+Denna används för att ladda om webbsidor i webbläsare utan att behöva trycka på "uppdatera"-knappen. Det sker istället automatiskt. 
+
+## Mitt system och tasks
+pub
+src
+
+* ** htmlTask  
+Denna task används för att kopiera HTML-filer från src-mappen (arbetsmappen) till pub-mappen (publiceringsmappen). 
+
+* ** jsTask  
+Denna task används för att använda "gulp-concat" för att sammanslå JS-filerna till en enda fil. Den används också för att använda "gulp-uglify-es" för att minifiera JS-filen. Sist men inte minst används den för att föra över denna fil till js-mappen i pub-mappen. 
+
+* ** cssTask
+Denna task används först till att använda "gulp-concat" för att sammanslå CSS-filerna till en enda fil. Sen  används den för att använda "gulp-uglifycss" för att minifiera CSS-filen. Sist används den för att föra över denna fil till css-mappen i pub-mappen.
+
+* ** imageTask
+Denna används för att först använda "gulp-imagemin" för att göra bilderna mindre. Sedan läggs dessa 'optimerade' bilder in i bild-mappen i pub-mappen. 
+
+* ** watchTask  
+Denna task används för att känna av ändringar i de fyra ovanstående "tasks" och tillämpa dessa omedelbart så att pub-mappen ändras utan att man behöver köra något kommando igen. (Denna skulle kunna läggas in i nedanstående task men jag har valt för min egen tydlighets skull att ha dessa separat. )
+
+* ** syncTask  
+Denna används för att använda "browser-sync" för att automatiskt ladda om webbläsarfönstret. 
+
