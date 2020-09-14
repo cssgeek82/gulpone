@@ -39,7 +39,7 @@ Denna task används först till att använda "gulp-concat" för att sammanslå C
 Denna används för att först använda "gulp-imagemin" för att göra bilderna mindre. Sedan läggs dessa 'optimerade' bilder in i bild-mappen i pub-mappen. 
 
 * **watchTask**  
-Denna task används för att känna av ändringar i de fyra ovanstående "tasks" och tillämpa dessa omedelbart så att pub-mappen ändras utan att man behöver köra något kommando igen. (Denna skulle kunna läggas in i nedanstående task men jag har valt för min egen tydlighets skull att ha dessa separat. )
+Denna task används för att känna av ändringar i de fyra ovanstående "tasks" och tillämpa dessa omedelbart så att pub-mappen ändras utan att man behöver köra något kommando igen. (Denna skulle kunna läggas in i nedanstående task men jag har valt för min egen tydlighets skull att ha denna separat. )
 
 * **syncTask**  
 Denna används för att använda "browser-sync" för att automatiskt ladda om webbläsarfönstret. 
