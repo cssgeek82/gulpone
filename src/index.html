@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="mainheader">
+
+            <div id="headlogo">
+                <a href="index.html"> <img id="hlogo" src="images/testlogo.png" alt="Logotyp" /></a>
+            </div>
+
+            <!-- Nav for bigger screens -->  
+            <nav id="headnavbig"> 
+                <ul>
+                    <li><a href="index.html" title="index">Hem</a></li>
+                    <li><a href="about.html" title="about">Om oss</a></li>
+                    <li><a href="info.html" title="information">Info</a></li>
+                </ul>
+            </nav>  
+            <!-- Nav for small och medium screens -->
+            <nav id="headnavsmall"> 
+                <ul>
+                    <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                    <li><a href="index.html" title="index">Hem</a></li>
+                    <li><a href="about.html" title="about">Om oss</a></li>
+                    <li><a href="info.html" title="information">Info</a></li>
+                </ul>
+            </nav>
+            <span id="navbtn" role="navigation" onclick="openNav()">&#9776;</span>
+
+
+        </header>
+
+        <div class="content">
+            <h1>Innehåll</h1>
+            <p>Här kommer lite text...</p>
+        </div> <!-- End "content" -->
+
+        <footer class="mainfooter">
+            <h3>Skapad av: Lena Tibbling. 2020-09-14. </h3>
+        </footer>
+
+    </div> <!-- End "container" -->
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
