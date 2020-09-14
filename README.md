@@ -23,7 +23,7 @@ Denna används för att ladda om webbsidor i webbläsare utan att behöva trycka
 Arbetsfilerna ligger i en mapp som heter "src". När man kör nedan angivna tasks så läggs filer även in i en mapp som heter "pub". Dessa är de filer som ska publiceras på ett eventuellt webbhotell. 
 
 För att kunna köra min kod så behöver man köra följande: **git clone https://github.com/cssgeek82/gulpone.git**
-Sedan behöver man köra: **npm install**. Detta för att npm-paketen ska installeras. Dessa ligger inte på denna git men information om vilka som ska installeras finns i package.json-filen. Så genom att köra npm install så kommer dessa att installeras. 
+Sedan behöver man köra: **npm install**. Detta för att npm-paketen ska installeras. Dessa ligger inte på detta repo men information om vilka paket som ska installeras finns i package.json-filen. Så genom att köra npm install så kommer dessa att installeras. 
 För att köra igång Gulp och få nedanstående tasks att fungera behöver man köra **gulp** i terminalen. 
 
 * **htmlTask**  
