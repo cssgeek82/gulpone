@@ -1,7 +1,7 @@
 # A starting point for a webbsite using Gulp
 
 ## Automatiseringsprocessens syfte:
-Syfte med automatisering är att slippa göra saker på egen hand, att de sker automatiskt. Detta kan vara att sammanslå flera filer till en. Jag personligen skriver ofta väldigt mycket CSS och har själv svårt att hitta i min CSS-fil. Att kunna dela upp detta i flera filer men att den automatiskt sammanslår till en fil som ska publiceras, samtidigt som jag behåller mina arbetsfiler, är kanon. Det är inte bara att sammanslå filer som man kan automatiseras. Man kan bland annat även konvertera innehåll, optimera bilder samt minifiera filer. 
+Syfte med automatisering är att slippa göra saker på egen hand, att det sker automatiskt. Detta kan vara att sammanslå flera filer till en. Jag personligen skriver ofta väldigt mycket CSS och har själv svårt att hitta i min CSS-fil. Att kunna dela upp detta i flera filer men att den automatiskt sammanslår till en fil som ska publiceras, samtidigt som jag behåller mina arbetsfiler, är kanon. Det är inte bara att sammanslå filer som kan automatiseras. Man kan bland annat även konvertera innehåll, optimera bilder samt minifiera filer. 
 
 ## Paket
 * **Gulp-concat**  
