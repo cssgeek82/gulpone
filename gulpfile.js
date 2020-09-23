@@ -1,16 +1,20 @@
 const { src, dest, watch, series, parallel } = require("gulp"); 
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
-const cssuglify = require("gulp-uglifycss"); 
+// const cssuglify = require("gulp-uglifycss"); 
 const imagemin = require("gulp-imagemin"); 
-const browserSync = require("browser-sync").create();      
+const browserSync = require("browser-sync").create();    
+const sass = require('gulp-sass'); 
+sass.compiler = require('node-sass'); 
+const sourcemaps = require('gulp-sourcemaps');
 
 // Paths
 const files = {
     htmlPath: "src/**/*.html",
-    cssPath: "src/**/*.css",
+    cssPath: "src/**/*.css",  // Not in use now but keep here
     jsPath: "src/**/*.js",
-    imagePath: "src/images/*"
+    imagePath: "src/images/*",
+    sassPath: "src/**/*.scss"
 }
 
 //Tasks
@@ -27,15 +31,27 @@ function jsTask() {
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(dest('pub/js'))
+} 
+
+// Sass-task including sourcemaps
+function sassTask() {
+    return src(files.sassPath)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ outputStyle: 'compressed'}).on("error", sass.logError))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(dest("pub/css"))
+        .pipe(browserSync.stream());          
 }
 
-// Merge (concat), minify CSS-files, move                
+
+// Merge (concat), minify CSS-files, move. Use if you don´t use SASS!!!!!   
+/*            
 function cssTask() {
     return src(files.cssPath)
         .pipe(concat('main.css'))
         .pipe(cssuglify())      
         .pipe(dest('pub/css'))
-}
+} */ 
 
 // Minify images and copy image-files to pub-catalog
 function imageTask() {
@@ -47,8 +63,8 @@ function imageTask() {
 
 // Watch 
 function watchTask() {
-    watch([files.htmlPath, files.jsPath, files.cssPath], 
-        parallel(htmlTask, jsTask, cssTask)          
+    watch([files.htmlPath, files.jsPath, files.sassPath /*, files.cssPath */], 
+        parallel(htmlTask, jsTask, sassTask, /* cssTask */)          
         );
 }
 
@@ -61,12 +77,15 @@ function syncTask() {
         },
         port: 3000
     });
-    watch([files.htmlPath, files.jsPath, files.cssPath, files.imagePath], 
-        parallel(htmlTask, jsTask, cssTask, imageTask)).on('change', browserSync.reload);
+    watch([files.htmlPath, files.jsPath, files.sassPath /*, files.cssPath, */ ], 
+        parallel(htmlTask, jsTask, sassTask /*, cssTask*/)).on('change', browserSync.reload);
 }
 
 // Export (to reach from elsewhere)
 exports.default = series(
-    parallel(htmlTask, jsTask, cssTask, imageTask),          
+    parallel(htmlTask, jsTask, sassTask /*, cssTask */ ),          
     parallel(watchTask,syncTask)
 );   
+
+// Export imagetask - not as default (takes to long to have it as default)
+exports.imgexpo = imageTask; 

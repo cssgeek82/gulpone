@@ -1,0 +1,132 @@
+.mainheader {
+    display: grid; 
+    background-image: url("/images/bgroundhead.png"); 
+    background-repeat: repeat-x; 
+    background-size: auto 100%;
+    color: $black; 
+    padding: 0; 
+    margin: 0; 
+    font: 100% $headingfont;
+}
+#headlogo {
+    grid-area: hlogo;
+    text-align: center; 
+}
+#hlogo {
+    width: 100%;
+    max-width: 200px;   
+}
+.headnavbig {
+    max-width: 100%; 
+    ul { 
+        text-align: center;  
+        list-style-type: none; 
+        margin: 0; 
+        padding-top: 25px; 
+        overflow: hidden;   
+    }
+    li { 
+        display: inline; 
+        padding: 14px 16px;  
+    }
+    a { 
+        color: $white; 
+        text-decoration: none; 
+        text-transform: uppercase; 
+        font-size: 1.2em; 
+    }
+    a:hover {
+        color: lighten($colortwo, 20%); 
+    }
+}
+#headnavbigone {
+    grid-area: bnavone; 
+}
+#headnavbigtwo {
+    grid-area: bnavtwo;
+}
+
+#headnavsmall {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0; 
+    background-color: $black; 
+    color: $white; 
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;  }
+.closebtn { 
+    position: absolute; 
+    top: 0; 
+    right: 5%; 
+    font-size: 30px; 
+    margin-left: 10px; }
+
+#headnavsmall { 
+    position: absolute; 
+    top: 0; 
+    right: 5%; 
+    font-size: 30px; 
+    margin-left: 10px;
+    li { 
+        padding: 5% 0% 0% 5%; 
+        margin: 5% 0%; 
+    } 
+    ul { 
+        list-style-type: none; 
+    }  
+    a { 
+        color: $white; 
+        text-decoration: none; 
+        font-size: 0.8em;  
+    }
+ }
+#navbtn {
+    grid-area: snav;
+    max-width: 100%; 
+    color: $white; 
+    font-size: 150%;   
+    text-align: right; 
+    padding-left: 10px;  
+    padding-top: 8px; 
+    justify-self: left;
+}
+
+
+
+/*Big screen-sizes*/
+@include bigscreen { 
+    #navbtn, #headnavsmall {
+        display: none; }
+    .mainheader {
+        grid-template-columns: 40% 20% 40% ;
+        grid-template-areas: 
+        "bnavone hlogo bnavtwo"; }
+}
+
+/*Medium screen-sizes*/
+@include medscreen { 
+    .headnavbig { 
+        display: none; } 
+    .mainheader {
+        grid-template-columns: 20% 10% 40% 30%;
+        grid-template-areas: 
+        "snav . hlogo ."; }
+}
+
+/*Small screen*/ 
+@include smallscreen  { 
+    .headnavbig { 
+        display: none; }
+    .mainheader {
+        grid-template-columns: 35% 30% 35%;
+        grid-template-areas: 
+        "snav hlogo ."; }
+    #hlogo {
+        max-width: 100px;   
+        width: 75%; 
+    }
+}  

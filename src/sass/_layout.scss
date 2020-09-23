@@ -1,0 +1,93 @@
+/* Contains layout; container, grids AND HOME PAGE! */ 
+body {
+    background-color: $white; 
+}
+
+.content {
+    width: 100%; 
+    max-width: 950px; 
+    margin: auto; 
+    padding: 10px; 
+    background-color: $white; 
+}
+
+#bags {
+    width: 90%; 
+}
+
+#textone {
+    @extend %textbox; 
+    margin-right: 10%; 
+}
+
+#texttwo {
+    @extend %textbox; 
+    margin-left: 10%; 
+}
+#textthree {
+    @extend %textbox; 
+    margin-left: 6%; 
+    margin-right: 4%; 
+}
+
+//Colorlinks on home-page
+#colorbox { display: grid; }
+#one {
+    @include colorboxes; 
+    grid-area: lone; 
+    background-color: $colorone;
+}
+#one:hover {
+    @include colorboxes (true); 
+    background-color: desaturate($colorone, 15%); 
+}
+#two {
+    @include colorboxes; 
+    grid-area: ltwo; 
+    background-color: $colortwo; 
+}
+#two:hover {
+    @include colorboxes (true);
+    background-color: lighten($colortwo, 15%); 
+}
+#three {
+    @include colorboxes; 
+    grid-area: lthree; 
+    background-color: $colorthree;
+}
+#three:hover {
+    @include colorboxes (true); 
+    background-color: darken($colorthree, 8%); 
+}
+
+
+
+
+//Grids (-not header)
+
+/*Big screen-sizes*/
+@include bigscreen { 
+    #colorbox {
+        grid-template-columns: auto auto auto;
+        grid-template-areas: 
+        "lone ltwo lthree"; }
+}
+
+/*Medium screen-sizes*/
+@include medscreen { 
+    #colorbox {
+        grid-template-columns: auto auto auto;
+        grid-template-areas: 
+        "lone ltwo lthree"; }
+}
+
+/*Small screen*/ 
+@include smallscreen  { 
+    #colorbox {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "lone" 
+        "ltwo" 
+        "lthree"; 
+    }
+} 

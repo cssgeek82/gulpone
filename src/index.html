@@ -4,31 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sass/main.css">
 </head>
 <body>
     <div class="container">
         <header class="mainheader">
 
+
             <div id="headlogo">
-                <a href="index.html"> <img id="hlogo" src="images/testlogo.png" alt="Logotyp" /></a>
+                <a href="index.html"> <img id="hlogo" src="images/parislogo.png" alt="Logotyp" /></a>
             </div>
 
+
             <!-- Nav for bigger screens -->  
-            <nav id="headnavbig"> 
+            <nav id="headnavbigone" class="headnavbig"> 
                 <ul>
                     <li><a href="index.html" title="index">Hem</a></li>
-                    <li><a href="about.html" title="about">Om oss</a></li>
-                    <li><a href="info.html" title="information">Info</a></li>
+                    <li><a href="#" title="products">Produkter</a></li>
+                    <li><a href="#" title="terms">Köpvillkor</a></li>
                 </ul>
             </nav>  
+            <nav id="headnavbigtwo" class="headnavbig"> 
+                <ul>
+                    <li><a href="#" title="about">Om oss</a></li>
+                    <li><a href="#" title="faq">FAQ</a></li>
+                    <li><a href="#" title="delivery">Leverans</a></li>
+                </ul>
+            </nav> 
             <!-- Nav for small och medium screens -->
             <nav id="headnavsmall"> 
                 <ul>
                     <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
                     <li><a href="index.html" title="index">Hem</a></li>
-                    <li><a href="about.html" title="about">Om oss</a></li>
-                    <li><a href="info.html" title="information">Info</a></li>
+                    <li><a href="#" title="products">Produkter</a></li>
+                    <li><a href="#" title="terms">Köpvillkor</a></li>
+                    <li><a href="#" title="about">Om oss</a></li>
+                    <li><a href="#" title="faq">FAQ</a></li>
+                    <li><a href="#" title="delivery">Leverans</a></li>
                 </ul>
             </nav>
             <span id="navbtn" role="navigation" onclick="openNav()">&#9776;</span>
@@ -37,12 +49,44 @@
         </header>
 
         <div class="content">
-            <h1>Innehåll</h1>
-            <p>Här kommer lite text...</p>
+
+            <div>
+                <img id="bags" src="images/parisbags.png" alt="Paris Bags" />
+            </div>        
+
+            <div id="textone">
+                <p>Välkommen till Paris Handbags. Affären som erbjuder störst sortiment av väskor från Frankrike. Vi har fast frakt på 49:- oavsett order. Vi skickar dina varor följande vardag innan klockan 14.  </p>
+            </div>
+
+            <div id="texttwo">
+                <h1>Erbjudande</h1>
+                <p>Just nu har vi 20% på alla väskor från märket La Embrayage. Erbjudandet gäller till och med söndag den 4 oktober. </p>
+            </div>
+
+            <div id="textthree">
+                <h1>Nyheter</h1>
+                <p>Nu har vi fått in nya väskor från det lyxiga märket Sac à ordures. </p>
+            </div>
+
+            <div id="colorbox">
+                <div id="one">
+                    <p>Låga priser! </p>
+                </div>
+                <div id="two">
+                    <p>Snabb frakt!</p>
+                </div>
+                <div id="three">
+                    <p>Frakt 49:-</p>
+                </div>
+            </div>
+
         </div> <!-- End "content" -->
 
         <footer class="mainfooter">
-            <h3>Skapad av: Lena Tibbling. 2020-09-14. </h3>
+            <p><span class="foot">Vem?</span> Lena Tibbling</p>
+            <p><span class="foot">När?</span> 2020-09-14</p>
+            <p><span class="foot">Hur?</span> Gulp, Sass, HTML, JS</p>
+            <p><span class="foot">Varför?</span> Moment 3 i Webbutveckling III</p>
         </footer>
 
     </div> <!-- End "container" -->

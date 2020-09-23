@@ -1,0 +1,74 @@
+/* Contains resets, variables, mixins, textstyling */
+
+// Resets
+*, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+// Colors
+$colorone: #cf69ca; 
+$colortwo:  #8a4a8a; 
+$colorthree: #915066; 
+$black: #000;
+$white: rgb(242, 242, 242); 
+
+// Fonts 
+$headingfont: Helvetica, sans-serif; 
+$bodytext: Arial, sans-serif; 
+
+//Mixins
+@mixin colorboxes($hover: false) {
+    min-height: 100px;
+    width: 100%; 
+    text-align: center;   
+    padding-top: 20px;
+    margin: 10px; 
+    border: 1px solid $black; 
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    @if $hover {
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    p {
+        font-weight: bold;
+        @if $hover{
+            color: rgba($black, 0.5);
+        } @else {
+            color: $white;
+        }
+    }
+}
+
+// Mixins screen sizes
+@mixin bigscreen {
+    @media screen and (min-width:950px) { @content; }
+}
+
+@mixin medscreen {
+    @media screen and (min-width:500px) and (max-width: 949px) { @content; }
+}
+
+@mixin smallscreen {
+    @media screen and (max-width: 499px) and (min-width: 200px) { @content; }
+}
+
+// Placeholder
+%textbox {
+    border: 1px solid $black; 
+    margin-top: 10px; 
+    margin-bottom: 20px; 
+    padding: 10px 20px; 
+}
+
+// Text
+p {
+    font: 100% $bodytext; 
+}
+h1 {
+    font: 100% $headingfont; 
+    font-size: 1.5em; 
+    margin-bottom: 10px; 
+}
