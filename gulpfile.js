@@ -2,6 +2,7 @@ const { src, dest, watch, series, parallel } = require("gulp");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
 // const cssuglify = require("gulp-uglifycss"); 
+const babel = require("gulp-babel"); 
 const imagemin = require("gulp-imagemin"); 
 const browserSync = require("browser-sync").create();    
 const sass = require('gulp-sass'); 
@@ -28,9 +29,13 @@ function htmlTask() {
 // Merge (concat), minify JS-files, move
 function jsTask() {
     return src(files.jsPath)
+        .pipe(sourcemaps.init())
+        .pipe(babel())
         .pipe(concat('main.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write("."))
         .pipe(dest('pub/js'))
+        .pipe(browserSync.stream()); 
 } 
 
 // Sass-task including sourcemaps
